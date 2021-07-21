@@ -1,1 +1,1 @@
-## titiler.pgstac
+## stac_fastapi.rio_stac

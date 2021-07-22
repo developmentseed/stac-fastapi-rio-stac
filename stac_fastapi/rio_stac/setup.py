@@ -10,10 +10,11 @@ inst_reqs = [
     "stac_fastapi.types",
     "stac_fastapi.extensions",
     "rio-stac",
+    "pystac",
 ]
 extra_reqs = {
     "pgstac": ["stac_fastapi.pgstac"],
-    "sqlachemy": ["stac_fastapi.sqlachemy"],
+    "sqlalchemy": ["stac_fastapi.sqlalchemy"],
     "test": ["pytest", "pytest-cov", "pytest-asyncio", "requests"],
 }
 

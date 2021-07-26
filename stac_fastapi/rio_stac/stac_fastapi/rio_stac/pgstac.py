@@ -24,11 +24,12 @@ class RioStacPGStac(ApiExtension):
 
         Returns:
             None
+
         """
         router = APIRouter()
 
         @router.post(
-            "/collections/{collectionId}/add",
+            "/collections/{collectionId}/create",
             response_model=None,
             response_model_exclude_none=True,
             response_model_exclude_unset=True,

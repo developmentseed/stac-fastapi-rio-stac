@@ -37,7 +37,7 @@ class RioStacSqlalchemy(ApiExtension):
 
         @router.post(
             "/collections/{collectionId}/add",
-            response_model=schemas.Item,
+            response_model=None,
             response_model_exclude_none=True,
             response_model_exclude_unset=True,
         )

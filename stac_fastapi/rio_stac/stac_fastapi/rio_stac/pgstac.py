@@ -2,12 +2,12 @@
 
 import attr
 from fastapi import APIRouter, FastAPI, Path
-from stac_pydantic import Item
 from starlette.requests import Request
 
 from stac_fastapi.pgstac.db import dbfunc
 from stac_fastapi.rio_stac.models import CreateItemModel
 from stac_fastapi.types.extension import ApiExtension
+from stac_fastapi.types.stac import Item
 
 router = APIRouter()
 
@@ -29,7 +29,7 @@ class RioStacPGStac(ApiExtension):
 
         @router.post(
             "/collections/{collectionId}/add",
-            response_model=Item,
+            response_model=None,
             response_model_exclude_none=True,
             response_model_exclude_unset=True,
         )
@@ -45,7 +45,7 @@ class RioStacPGStac(ApiExtension):
                 collection=collectionId,
                 collection_url=f"{request.base_url}/collections/{collectionId}",
             )
-            item = Item(**pystac_item)
+            item = Item(**pystac_item.to_dict())
             await dbfunc(pool, "create_item", item)
             return item
 

@@ -6,15 +6,15 @@ with open("README.md") as f:
     long_description = f.read()
 
 inst_reqs = [
-    "stac_fastapi.api",
-    "stac_fastapi.types",
-    "stac_fastapi.extensions",
+    "stac_fastapi.api~=2.0",
+    "stac_fastapi.types~=2.0",
+    "stac_fastapi.extensions~=2.0",
     "rio-stac",
     "pystac",
 ]
 extra_reqs = {
-    "pgstac": ["stac_fastapi.pgstac"],
-    "sqlalchemy": ["stac_fastapi.sqlalchemy"],
+    "pgstac": ["stac_fastapi.pgstac~=2.0"],
+    "sqlalchemy": ["stac_fastapi.sqlalchemy~=2.0"],
     "test": ["pytest", "pytest-cov", "pytest-asyncio", "requests"],
 }
 
